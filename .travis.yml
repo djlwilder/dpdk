@@ -51,6 +51,6 @@ matrix:
    - arch: amd64
      env: DEF_LIB="shared" OPTS="-Denable_kmods=false" AARCH64=1
    - arch: amd64
-     env: BUILD_DOCS=1
+     env: DEF_LIB="shared" BUILD_DOCS=1
 
 script: ./.ci/${TRAVIS_OS_NAME}-build.sh
