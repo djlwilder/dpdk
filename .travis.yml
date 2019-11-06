@@ -37,6 +37,8 @@ env:
 matrix:
    exclude:
    - arch: ppc64le
+     compiler: clang
+   - arch: ppc64le
      env: DEF_LIB="shared" RUN_TESTS=1
    - arch: ppc64le
      env: DEF_LIB="shared" EXTRA_PACKAGES=1 RUN_TESTS=1
