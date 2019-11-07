@@ -20,7 +20,7 @@ if [ "$BUILD_DOCS" = "1" ]; then
              python3-sphinx
 fi
 
-if [ $AARCH64 == "1" ]; then
+if [ "$AARCH64" = "1" ]; then
         sudo apt-get install -y \
              gcc-aarch64-linux-gnu \
              libc6-dev-arm64-cross
