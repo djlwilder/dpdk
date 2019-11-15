@@ -12,7 +12,7 @@ os:
 arch:
   - amd64
   - ppc64le
-#  - arm64
+  - arm64
 
 addons:
   apt:
