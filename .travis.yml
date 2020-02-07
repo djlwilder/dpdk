@@ -35,6 +35,7 @@ build_32b_packages: &build_32b_packages
   - [gcc-multilib]
 
 doc_packages: &doc_packages
+  - *required_packages
   - [doxygen, graphviz, python3-sphinx]
 
 before_install: ./.ci/${TRAVIS_OS_NAME}-setup.sh
@@ -147,6 +148,35 @@ matrix:
           - *libabigail_build_packages
   - env: DEF_LIB="shared" EXTRA_PACKAGES=1 ABI_CHECKS=1
     arch: arm64
+    compiler: gcc
+    addons:
+      apt:
+        packages:
+          - *extra_packages
+          - *libabigail_build_packages
+  - env: DEF_LIB="static"
+    arch: ppc64le
+    compiler: gcc
+    addons:
+      apt:
+        packages:
+          - *extra_packages
+  - env: DEF_LIB="shared"
+    arch: ppc64le
+    compiler: gcc
+    addons:
+      apt:
+        packages:
+          - *extra_packages
+  - env: DEF_LIB="shared" BUILD_DOCS=1
+    arch: ppc64le
+    compiler: gcc
+    addons:
+      apt:
+        packages:
+          - *doc_packages
+  - env: DEF_LIB="shared" EXTRA_PACKAGES=1 ABI_CHECKS=1
+    arch: ppc64le
     compiler: gcc
     addons:
       apt:
