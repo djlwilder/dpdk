@@ -33,6 +33,11 @@ if [ "$AARCH64" = "1" ]; then
     OPTS="$OPTS --cross-file config/arm/arm64_armv8_linux_gcc"
 fi
 
+echo -----------
+cat /proc/cpuinfo
+echo --------------
+
+
 if [ "$BUILD_DOCS" = "1" ]; then
     OPTS="$OPTS -Denable_docs=true"
 fi
