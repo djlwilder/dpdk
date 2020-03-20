@@ -1066,6 +1066,8 @@ rte_eal_init(int argc, char **argv)
 	if (internal_config.iova_mode == RTE_IOVA_DC) {
 		/* autodetect the IOVA mapping mode */
 		enum rte_iova_mode iova_mode = rte_bus_get_iommu_class();
+		
+		RTE_LOG(INFO, EAL, "rte_bus_get_iommu_class returned %d.\n",iova_mode);
 
 		if (iova_mode == RTE_IOVA_DC) {
 			RTE_LOG(INFO, EAL, "Buses did not request a specific IOVA mode.\n");
