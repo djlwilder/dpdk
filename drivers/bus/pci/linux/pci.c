@@ -574,7 +574,7 @@ pci_device_iommu_support_va(__rte_unused const struct rte_pci_device *dev)
 			continue;
 
 		if (strstr(line, "PowerNV") != NULL) {
-			RTE_LOG(DEBUG, EAL, "Running on a PowerNV system\n");
+			RTE_LOG(INFO, EAL, "Running on a PowerNV system\n");
 			ret = true;
 			break;
 		}
@@ -582,6 +582,7 @@ pci_device_iommu_support_va(__rte_unused const struct rte_pci_device *dev)
 
 	free(line);
 	fclose(fp);
+	RTE_LOG(INFO, EAL, "pci_device_iommu_support_va returned %d \n",ret);
 	return ret;
 }
 #else
