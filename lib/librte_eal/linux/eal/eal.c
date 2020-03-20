@@ -1060,6 +1060,8 @@ rte_eal_init(int argc, char **argv)
 
 	phys_addrs = rte_eal_using_phys_addrs() != 0;
 
+	RTE_LOG(INFO, EAL, internal_config.iova_mode == %d.n\",internal_config.iova_mode);
+
 	/* if no EAL option "--iova-mode=<pa|va>", use bus IOVA scheme */
 	if (internal_config.iova_mode == RTE_IOVA_DC) {
 		/* autodetect the IOVA mapping mode */
